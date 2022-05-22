@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +14,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'index']);
+Route::post('/search',[HomeController::class,'search'])->name('search');
+Route::get('/content',[HomeController::class,'getContent'])->name('content');
+
