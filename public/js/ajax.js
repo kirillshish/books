@@ -15,8 +15,7 @@ async function sendRequest(event) {
 
     let form = document.getElementById("book-search-form");
     let data = new FormData(form);
-
-    // блок кода вкотором нужно разобраться
+    
     const object = Object.fromEntries(data.entries());
     object.authors = data.getAll("authors");
     object.genres = data.getAll("genres");
